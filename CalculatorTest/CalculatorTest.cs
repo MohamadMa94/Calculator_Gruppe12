@@ -37,7 +37,7 @@ namespace CalculatorTest
 
         [TestCase(4, 4, 0)]
         [TestCase(9, 1, 8)]
-
+        [TestCase(6, 4, 2)]
         public void Subtract_ReturnsTheSum(double a, double b, double result)
         {           
 
@@ -48,6 +48,7 @@ namespace CalculatorTest
         }
         [TestCase(6, 4, 24)]
         [TestCase(36, 0, 0)]
+        [TestCase(5, 5, 25)]
         public void Subtract_1ReturnsTheSum(double a, double b, double result)
         {
             
