@@ -24,6 +24,7 @@ namespace CalculatorTest
         }
 
         [TestCase(4, 5, 9)]
+        [TestCase(4, 3, 7)]
         [TestCase(4, 0, 4)]
          public void Add_ReturnsTheSum(double a, double b, double result)
         {
