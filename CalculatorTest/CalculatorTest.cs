@@ -57,7 +57,7 @@ namespace CalculatorTest
             Assert.That(sum, Is.EqualTo(result));
 
         }
-
+        [TestCase(2, 3, 8)]
         [TestCase(4, 4, 256)]
         [TestCase(4, 0, 1)]
         public void SubtractPowerReturnsTheSum(double x, double exp, double result)
