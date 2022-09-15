@@ -46,6 +46,7 @@ namespace CalculatorTest
             Assert.That(sum, Is.EqualTo(result).Within(0.01));
 
         }
+        [TestCase(4, 4, 16)]
         [TestCase(6, 4, 24)]
         [TestCase(36, 0, 0)]
         [TestCase(5, 5, 25)]
