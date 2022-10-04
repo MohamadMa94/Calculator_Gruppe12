@@ -3,18 +3,13 @@ using Calculator;
 namespace CalculatorTest
 {
     public class CalculatorTest
-
-
     {
 
         private Calculator1 Calculator;
         [SetUp]
         public void Setup()
         {
-
             Calculator  = new Calculator1();
-
-
         }
 
         [Test]
@@ -68,6 +63,28 @@ namespace CalculatorTest
             Assert.That(sum, Is.EqualTo(result).Within(0.1));
 
         }
+
+        [TestCase(2, 2, 1)]
+        [TestCase(5, 0, 0)]
+        [TestCase(33,3,11)]
+        public void DivideReturnsTheSum(double dividend, double divisor, double result)
+        {
+            double sum = Calculator.Divide(dividend, divisor);
+
+            Assert.That(sum, Is.EqualTo(result).Within((0.1)));
+        }
+
+        /*
+        public void DivideThrowsException(double dividend, double divisor, double result)
+        {
+            double sum = Calculator.Divide(dividend, divisor);
+            
+             Assert.Throws<Exception>()
+            {
+
+            }
+        }
+        */
 
     }
 }

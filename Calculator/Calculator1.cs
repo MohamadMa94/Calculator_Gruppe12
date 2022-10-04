@@ -27,5 +27,19 @@ namespace Calculator
             return result;
         }
 
+        public double Divide(double dividend, double divisor)
+        {
+            double result;
+            if (divisor == 0)
+            {
+                return 0;
+                //throw new Exception();
+            }
+
+            result = dividend / divisor;
+
+            return result;
+        }
+
     }
 }
