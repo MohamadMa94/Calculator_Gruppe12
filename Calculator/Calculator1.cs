@@ -4,8 +4,22 @@ namespace Calculator
 {
     public class Calculator1
     {
+        private double _accumulator = 0;
+        public double Accumulator
+        {
+            get { return _accumulator;}
+            private set { _accumulator = value; }
+        }
+
+        public void Clear()
+        {
+            _accumulator = 0;
+        }
+
+
         public double Add(double a, double b)
         {
+            _accumulator = a + b;
             return a + b;
         }
 
@@ -33,13 +47,14 @@ namespace Calculator
             if (divisor == 0)
             {
                 return 0;
-                //throw new Exception();
             }
 
             result = dividend / divisor;
 
             return result;
         }
+
+
 
     }
 }
