@@ -19,7 +19,6 @@ namespace Calculator
 
         public double Add(double a, double b)
         {
-            _accumulator = a + b;
             return a + b;
         }
 
