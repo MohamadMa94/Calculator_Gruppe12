@@ -15,20 +15,22 @@ namespace Calculator
         {
             _accumulator = 0;
         }
-
-
+        
         public double Add(double a, double b)
         {
+            _accumulator = a + b;
             return a + b;
         }
 
         public double Subtract(double a, double b)
         {
+            _accumulator = a - b;
             return a - b;
         }
 
         public double Multiply(double a, double b)
         {
+            _accumulator = a * b;
             return a * b;
         }
 
@@ -36,6 +38,8 @@ namespace Calculator
         {
             double result;
             result = Math.Pow(x, exp);
+
+            _accumulator = result;
 
             return result;
         }
@@ -45,11 +49,13 @@ namespace Calculator
             double result;
             if (divisor == 0)
             {
+                _accumulator = 0;
                 return 0;
             }
 
             result = dividend / divisor;
 
+            _accumulator = result;
             return result;
         }
 
