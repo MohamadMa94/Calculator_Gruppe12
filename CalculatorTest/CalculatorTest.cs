@@ -119,6 +119,17 @@ namespace CalculatorTest
             Assert.That(expected, Is.EqualTo(Calculator.Accumulator).Within(0.1));
         }
 
+        [TestCase(2,4)]
+        [TestCase(2587, 6)]
+        [TestCase(25, 9)]
+        public void ClearTest(double a, double b)
+        {
+            Calculator.Add(a,b);
+            Calculator.Clear();
+
+            Assert.That(0, Is.EqualTo(Calculator.Accumulator));
+        }
+
 
         /*
         public void DivideThrowsException(double dividend, double divisor, double result)
