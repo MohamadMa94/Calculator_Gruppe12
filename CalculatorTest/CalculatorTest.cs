@@ -74,6 +74,52 @@ namespace CalculatorTest
             Assert.That(sum, Is.EqualTo(result).Within((0.1)));
         }
 
+        [TestCase(2,3, 5)]
+        [TestCase(8,4 , 12)]
+        [TestCase(9, 1, 10)]
+        public void AccumulatorSetDuringAdd(double a, double b, double expected)
+        {
+            Calculator.Add(a, b);
+            Assert.That(expected, Is.EqualTo(Calculator.Accumulator).Within(0.1));
+        }
+
+        [TestCase(2, 3, -1)]
+        [TestCase(8, 4, 4)]
+        [TestCase(9, 1, 8)]
+        public void AccumulatorSetDuringSubtract(double a, double b, double expected)
+        {
+            Calculator.Subtract(a, b);
+            Assert.That(expected, Is.EqualTo(Calculator.Accumulator).Within(0.1));
+        }
+
+        [TestCase(2, 3, 6)]
+        [TestCase(8, 4, 32)]
+        [TestCase(9, 1, 9)]
+        public void AccumulatorSetDuringMultiply(double a, double b, double expected)
+        {
+            Calculator.Multiply(a, b);
+            Assert.That(expected, Is.EqualTo(Calculator.Accumulator).Within(0.1));
+        }
+
+        [TestCase(2, 3, 8)]
+        [TestCase(4, 4, 256)]
+        [TestCase(4, 0, 1)]
+        public void AccumulatorSetDuringPower(double a, double b, double expected)
+        {
+            Calculator.Power(a, b);
+            Assert.That(expected, Is.EqualTo(Calculator.Accumulator).Within(0.1));
+        }
+
+        [TestCase(2, 2, 1)]
+        [TestCase(5, 0, 0)]
+        [TestCase(33, 3, 11)]
+        public void AccumulatorSetDuringDivide(double a, double b, double expected)
+        {
+            Calculator.Divide(a, b);
+            Assert.That(expected, Is.EqualTo(Calculator.Accumulator).Within(0.1));
+        }
+
+
         /*
         public void DivideThrowsException(double dividend, double divisor, double result)
         {
